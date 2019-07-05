@@ -1,14 +1,20 @@
 const express = require("express");
-const homePage = require("./routes/homePage");
+//const homePage = require("./routes/homePage");
 const app = express();
 const path = require('path');
-app.use(homePage);
-app.use(home);
-app.use(contact);
+const about = require('./routes/aboutPage');
 app.use(about);
-app.use(notfaund);
-app.use(blog);
+const admin = require('./routes/adminPage');
 app.use(admin);
+const blog = require('./routes/blogPage');
+app.use(blog);
+const contact = require('./routes/contactPage');
+app.use(contact);
+const home = require('./routes/homePage');
+app.use(home);
+const notfaund = require('./routes/notfaundPage');
+ app.use(notfaund);
+
 
 app.use(express.static(path.join(__dirname, "public")));
 

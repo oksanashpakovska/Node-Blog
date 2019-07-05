@@ -1,15 +1,10 @@
 const path = require("path");
 const express = require("express");
 const routes = express.Router();
-routes.get("/", (req, res, next) => {
+routes.get("/about", (req, res, next) => {
 
     //res.sendFile(path.join(__dirname,"../","vievs","home.html"));
-    res.render('about', {
-        title: "About page",
-        // h1: "Cherry",
-        // button: "red",
-        // img: "Shape",
-    });
+    res.render('about');
 });
 
 module.exports = routes;

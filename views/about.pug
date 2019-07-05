@@ -10,15 +10,24 @@ html(lang='en')
         link( rel="stylesheet" href="/css/main.css")
         
     body
-        //- div.container
-        //-     div.row
-        //-         h1 #{h1} 
-        //- div.container
-        //-     div.row       
-        //-         button #{button}
-        //- div.container
-        //-     div.row  
-        //-     img(src="/img/Shape 4.png", alt="Shape")
-        //-     img #{img}                
-                
-        
+       h1.text-center POSTS
+.album.py-5.bg-light
+  .container(v-cloak='')
+    .row
+      .col-md-4(v-for='post in displayedPosts')
+        .card.mb-4.box-shadow.post-cards
+          // <img class="card-img-top" src="dist/img/placeholder-blue-800x600px.png" alt="Card image cap">
+          .card-body
+            h5.capitalize {{post.title}}
+            p.card-text {{post.body.slice(0, 120)}}...
+            .d-flex.justify-content-between.align-items-center
+              .btn-group
+                //
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+    .clearfix.btn-group.col-md-2.offset-md-5
+      button.btn.btn-sm.btn-outline-secondary(type='button' v-if='page != 1' @click='page--')
+        | &lt;&lt;
+      button.btn.btn-sm.btn-outline-secondary(type='button' v-for='pageNumber in pages.slice(page-1, page+5)' @click='page = pageNumber')
+        | {{pageNumber}}
+      button.btn.btn-sm.btn-outline-secondary(type='button' @click='page++' v-if='page < pages.length')  &gt;&gt; 
