@@ -7,42 +7,164 @@ html(lang='en')
         title #{title} 
         link( rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
-        link( rel="stylesheet" href="/css/main.css")
-        
+        link( rel="stylesheet" href="/css/main.css" type="text/css" media="screen")
+        link( rel="stylesheet" href="/css/nivo-slider.css" type="text/css" media="screen")
     body
-     body
-| h1.text-center POSTS
-| .album.py-5.bg-light
-| .container(v-cloak=&apos;&apos;)
-| .row
-| .col-md-4(v-for=&apos;post in displayedPosts&apos;)
-| .card.mb-4.box-shadow.post-cards
-| // 
-img.card-img-top(src='dist/img/placeholder-blue-800x600px.png' alt='Card image cap')
-|           .card-body
-|             h5.capitalize {{post.title}}
-|             p.card-text {{post.body.slice(0, 120)}}...
-|             .d-flex.justify-content-between.align-items-center
-|               .btn-group
-|                 //
-button.btn.btn-sm.btn-outline-secondary(type='button') View
-button.btn.btn-sm.btn-outline-secondary(type='button') Edit
-|     .clearfix.btn-group.col-md-2.offset-md-5
-|       button.btn.btn-sm.btn-outline-secondary(type=&apos;button&apos; v-if=&apos;page != 1&apos; @click=&apos;page--&apos;)
-|         | &lt;&lt;
-|       button.btn.btn-sm.btn-outline-secondary(type=&apos;button&apos; v-for=&apos;pageNumber in pages.slice(page-1, page+5)&apos; @click=&apos;page = pageNumber&apos;)
-|         | {{pageNumber}}
-|       button.btn.btn-sm.btn-outline-secondary(type=&apos;button&apos; @click=&apos;page++&apos; v-if=&apos;page &lt; pages.length&apos;)  &gt;&gt;
+      #bg_black
+      #logo
+    h1
+      a(href='#') freecss_greengrey
+    a(href='#')
+      small Small Company Slogan Goes Here
+      #wrap
+      #header
+      #wrapper
+        #slider-wrapper
+          #slider.nivoSlider
+            img(src='images/header.jpg' alt='')
+            img(src='images/header2.jpg' alt='')
+            img(src='images/header3.jpg' alt='')
+            img(src='images/header4.jpg' alt='')
+      script(type='text/javascript' src='lib/jquery-1.4.3.min.js')
+      script(type='text/javascript' src='lib/jquery.nivo.slider.pack.js')
+      script(type='text/javascript').
+        $(window).load(function() {
+        $('#slider').nivoSlider();
+        });
+       #menu
+      ul
+        li
+          a.active(href='#') Home
+        li
+          a(href='#') About
+        li
+          a(href='#') Contact
+        li
+          a(href='#') Blog
+        li
+          a(href='#') 404
+        li
+          a(href='#') Admin
+      .clear
+      #column_box
+         #column1
+        h2 Fusce semper feugiat elit, vitae
+        p
+          a(href='#') Vestibulum semper venenatis enim at.
+          br
+          | Proin hendrerit gravida interdum. Morbi molestie erat sit amet risus euismod vehicula. Pellen massa nisi. Ut sapien enim, sollicitu
+        a.read(href='#') read more
+      #column2
+        h2 Nunc odio metus, convallis at 
+        p
+          a(href='#') Cras faucibus commodo nisi, non dapibus
+          |  est facilisis vitae. Suspendisse sed lorem ut neque iaculis pellentesque vitae feugiat magna. Integer lorem tellus, euismod sed convallis eu,
+        a.read(href='#') read more
+      #column3
+        h2 Suspendisse mi erat ullamcorper
+        p
+          a(href='#') Aliquam libero quam, tincidunt eget porttitor et, auctor sit amet dolor.
+          br
+          | Nulla vestibulum elit eu justo laoreet posuere. Cras elementum tempor adipiscing. Cras
+        a.read(href='#') read more
+      .clear
+        #last_box
+      p
+        a(href='#') Cras faucibus commodo nisi, non dapibus est facilisis vitae.
+        br
+        | &#x9;&#x9;&#x9;&#x9;&#x9;Suspendisse sed lorem ut neque iaculis pellentesque vitae feugiat magna. Integer lorem tellus, euismod sed convallis eu, pretium sit amet massa. Nulla eros lacus, tristique sed laoreet vitae, cursus facilisis odio. Aliquam libero quam, tincidunt eget porttitor et, auctor sit amet dolor. Nulla vestibulum elit eu justo laoreet posuere. Cras elementum tempor adipiscing. Cras vehicula luctus turpis, eu aliquam neque placerat ut. Maecenas non risus mi, eu gravida felis. Pellentesque mollis lobortis tincidunt.
+      #footer_top_top
+      #footer_repeat
+       #footer_top
+        #footer_column1
+          h3 Recent posts
+          .footer_text
+            p
+              a(href='#') Suspendisse rutrum interdum lacinia.
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Suspendisse tempus aliquet elit sit amet pellentesque. Donec iaculis pulvinar mauris, ac vulputate justo pretium quis.
+            br
+            p
+              a(href='#') Quisque luctus, mi ornare malesuada
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Suspendisse tempus aliquet elit sit amet pellentesque. Donec iaculis pulvinar
+        #footer_column2
+          h3 Share with Others
+          .footer_text
+            .foot_pad
+              .link1
+                a(href='#') Subscribe to Blog
+              .link2
+                a(href='#') Be a fan on Facebook
+              .link3
+                a(href='#') RSS Feed
+              .link4
+                a(href='#') Follow us on Twitter
+        #footer_column3
+          h3 Useful Resources
+          .footer_text
+            .foot_pad
+              ul.ls
+                li
+                  a(href='#') Lorem ipsum dolor
+                li
+                  a(href='#') Maecenas in turpis 
+                li
+                  a(href='#') Morbi fringilla libero
+                li
+                  a(href='#') In venenatis metus vel 
+                li
+                  a(href='#') Donec cursus quam ac 
+        .clear
+        #footer_top_bot
+       #footer_bot
+      .v
+       | Copyright  2011. Designed by 
+        a(href='http://www.myfreecsstemplates.com/') My Free css templates
+     .vlinks
+      | Provided by 
+      a(href='http://www.websitetemplates.org') Website Templates
+       p
+      a(href='#') Privacy Policy
+      |  | 
+      a(href='#') Terms of Use
+      |  | 
+      a(href='http://validator.w3.org/check/referer' title='This page validates as XHTML 1.0 Transitional')
+        abbr(title='eXtensible HyperText Markup Language') XHTML
+      |  | 
+      a(href='http://jigsaw.w3.org/css-validator/check/referer' title='This page validates as CSS')
+        abbr(title='Cascading Style Sheets') CSS
+     
+//- | h1.text-center POSTS
+//- | .album.py-5.bg-light
+//- | .container(v-cloak=&apos;&apos;)
+//- | .row
+//- | .col-md-4(v-for=&apos;post in displayedPosts&apos;)
+//- | .card.mb-4.box-shadow.post-cards
+//- | // 
+//- img.card-img-top(src='dist/img/placeholder-blue-800x600px.png' alt='Card image cap')
+//- |           .card-body
+//- |             h5.capitalize {{post.title}}
+//- |             p.card-text {{post.body.slice(0, 120)}}...
+//- |             .d-flex.justify-content-between.align-items-center
+//- |               .btn-group
+//- |                 //
+//- button.btn.btn-sm.btn-outline-secondary(type='button') View
+//- button.btn.btn-sm.btn-outline-secondary(type='button') Edit
+//- |     .clearfix.btn-group.col-md-2.offset-md-5
+//- |       button.btn.btn-sm.btn-outline-secondary(type=&apos;button&apos; v-if=&apos;page != 1&apos; @click=&apos;page--&apos;)
+//- |         | &lt;&lt;
+//- |       button.btn.btn-sm.btn-outline-secondary(type=&apos;button&apos; v-for=&apos;pageNumber in pages.slice(page-1, page+5)&apos; @click=&apos;page = pageNumber&apos;)
+//- |         | {{pageNumber}}
+//- |       button.btn.btn-sm.btn-outline-secondary(type=&apos;button&apos; @click=&apos;page++&apos; v-if=&apos;page &lt; pages.length&apos;)  &gt;&gt;
 
-        //- div.container
-        //-     div.row
-        //-         h1 #{h1} 
-        //- div.container
-        //-     div.row       
-        //-         button #{button}
-        //- div.container
-        //-     div.row  
-        //-     img(src="/img/Shape 4.png", alt="Shape")
-        //-     img #{img}                
+//-         //- div.container
+//-         //-     div.row
+//-         //-         h1 #{h1} 
+//-         //- div.container
+//-         //-     div.row       
+//-         //-         button #{button}
+//-         //- div.container
+//-         //-     div.row  
+//-         //-     img(src="/img/Shape 4.png", alt="Shape")
+//-         //-     img #{img}                
                 
         
