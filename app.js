@@ -1,5 +1,5 @@
 const express = require("express");
-//const homePage = require("./routes/homePage");
+const homePage = require("./routes/homePage");
 const app = express();
 const path = require('path');
 const about = require('./routes/aboutPage');
